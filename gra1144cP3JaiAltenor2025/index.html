@@ -1,59 +1,189 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <title>Beyond the Lights
-	</title>
+  <title>Beyond the Lights</title>
 	
   <style>
-    * { box-sizing: border-box; }
-    body { margin: 0; font-family: "Times New Roman", "serif"; line-height: 1.5; }
-    #wrapper { max-width: 1100px; margin: 0 auto; padding: 24px; text-align: center }
-    header, footer { padding: 16px 0; }
-    nav ul { list-style: none; margin: 8px 0; padding: 0; display: flex; gap: 18px; }
-    nav a { text-decoration: none; }
-    img { max-width: 100%; height: auto; display: block; }
-    section { margin-block: 1rem; }
-    h1 { margin: 0; }
-    .small { font-size: 1.5rem; color: #555; }
-    .banner { margin: 16px 0; }
-  </style>
-	
-</head>
+    body { 
+      margin: 48px; 
+      font-family: Arial, Helvetica, sans-serif; /* modern font */
+      line-height: 1.5; 
+      text-align: center; 
+      background-color: #000000; 
+      color: white;
+    }
 
+    #wrapper { 
+      max-width: 1100px; 
+      padding: 24px; 
+      text-align: center;
+    }
+
+    header { 
+      text-align: center; 
+      padding: 16px;
+    }
+
+    footer {
+      text-align: left; 
+      padding: 48px;
+    }
+
+    nav ul { 
+      list-style: none;
+	text-decoration: underline;
+      margin: 0; 
+      padding: 16px; 
+      display: inline-flex; 
+      gap: 48px; 
+      text-align: center;
+		color: goldenrod;
+    }
+
+    nav a {
+      color: gold; 
+      text-decoration: none;
+    }
+
+    img { 
+      max-width: 100%; 
+      height: auto; 
+      display: block;
+      margin: 0 auto;
+    }
+
+    .banner { margin: 16px; }
+
+    .video-container {
+      position: relative;
+      padding-bottom: 48%;
+      height: 0;
+      overflow: hidden;
+    }
+
+    .video-container iframe {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+    }
+    .highlight {
+      background-color: darkgoldenrod;
+      color: black;
+      padding: 20px;
+      margin: 16px 0;
+    }
+    #story, #cast {
+      display: inline-block;
+      width: 48%;
+      vertical-align: top;
+    }
+	  h1, h3 {
+  color: gold;
+}
+  </style>
+</head>
+	
 <body>
   <div id="wrapper">
     <header>
-      <h1>Beyond the Lights
-		</h1>
+      <img src="Images/Beyond The Lights Logo.png" alt="Beyond the Lights Logo" width="450">
+		
       <nav>
         <ul>
-          <li><a href="#story">Story</a></li>
+          <li><a href="#story">The Story</a></li>
           <li><a href="#cast">Cast &amp; Crew</a></li>
-          <li><a href="#gallery">Gallery</a></li>
-          <li><a href="#credits">Credits</a></li>
+          <li><a href="#tickets">NOW SHOWING</a></li>
         </ul>
       </nav>
+		
       <div class="banner">
-        <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=1600"
-             />
+        <div class="video-container">
+          <iframe 
+            src="https://www.youtube.com/embed/d8hKxJjuqhY?si=h0jCHr_OJlyCQGvi&amp;start=2&autoplay=1&mute=1" 
+            title="Beyond the Lights Trailer"
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            referrerpolicy="strict-origin-when-cross-origin" 
+            allowfullscreen>
+          </iframe>
+        </div>
       </div>
     </header>
 
     <main>
-      <section id="story">
-        <h2>Story</h2>
-        <p><em>Beyond the Lights</em> follows rising pop star Noni Jean as she wrestles with the pressure of fame and
-           slowly finds her own voice, truth, and love.</p>
-      </section>
+      <div class="highlight">
+        <section id="story">
+          <h2>The Story</h2>
+          <p>
+            <em>Beyond the Lights</em> is a heartfelt drama about fame, love, and identity. 
+            It follows rising star Noni Jean, a young singer on the edge of superstardom, 
+            who struggles with the pressure to be perfect. When she meets Kaz Nicol, 
+            a police officer with dreams of his own, she begins to discover her true voice 
+            and what it means to live honestly. The film blends romance, music, and 
+            self-discovery, showing how finding love can also mean finding yourself.
+          </p>
+        </section>
 
-      <section id="cast">
-        <h2>Cast &amp; Crew</h2>
-        <ul>
-          <li>Gugu Mbatha-Raw — Noni Jean</li>
-          <li>Nate Parker — Kaz Nicol</li>
-          <li>Minnie Driver — Macy Jean</li>
-          <li>Written &amp; Directed by Gina Prince-Bythewood</li>
-        </ul>
+        <section id="cast">
+          <h2>Cast &amp; Crew</h2> 
+          <ul>
+            <li>Gugu Mbatha-Raw - Noni Jean</li>
+            <li>Nate Parker - Kaz Nicol</li>
+            <li>Minnie Driver - Macy Jean</li>
+            <li>Written &amp; Directed by Gina Prince-Bythewood</li>
+          </ul>
+        </section>
+      </div>
+		
+      <section id="tickets">
+        <h2>Now Showing</h2> 
+        <p>Seating is limited. Tickets are required for screening admission. 
+			All ticket holders were emailed a QR code to redeem a "Debut Week Gift Bag" upon entry. </p>
+			
+        <nav>
+          <ul>
+            <li><a href="#miami">MIAMI</a></li>
+            <li><a href="#houston">HOUSTON</a></li>
+            <li><a href="#losangeles">LOS ANGELES</a></li>
+            <li><a href="#washington">WASHINGTON</a></li>
+            <li><a href="#newyork">NEW YORK</a></li>
+          </ul>
+        </nav>
+      </section>
+		
+      <section id="miami">
+        <h3>Miami Showtimes</h3>
+        <p>The Filmore Miami Beach | September 26, 2025 | 7:25 PM</p>
+        <p>Silverspot Cinema | October 3, 2025 | 8:00 PM</p>
+        <p>CMX Brickell City Centre | October 10, 2025 | 7:30 PM</p>
+      </section>
+		
+      <section id="houston">
+        <h3>Houston Showtimes</h3>
+        <p>River Oaks Theatre | September 26, 2025 | 7:30 PM</p>
+        <p>Regal Edwards Greenway Grand Palace | October 3, 2025 | 8:00 PM</p>
+        <p>Alamo Drafthouse LaCenterra | October 10, 2025 | 7:45 PM</p>
+      </section>
+		
+      <section id="losangeles">
+        <h3>Los Angeles Showtimes</h3>
+        <p>TCL Chinese Theatre | September 26, 2025 | 7:30 PM</p>
+        <p>New Beverly Cinema | October 3, 2025 | 8:00 PM</p>
+        <p>American Cinematheque at the Egyptian | October 10, 2025 | 7:45 PM</p>
+      </section>
+		
+      <section id="washington">
+        <h3>Washington Showtimes</h3>
+        <p>Landmark E Street Cinema | September 26, 2025 | 7:30 PM</p>
+        <p>Alamo Drafthouse DC (Bryant Street NE) | October 3, 2025 | 8:00 PM</p>
+        <p>AMC Georgetown 14 | October 10, 2025 | 7:45 PM</p>
+      </section>
+		
+      <section id="newyork">
+        <h3>New York Showtimes</h3>
+        <p>Film Forum | September 26, 2025 | 7:30 PM</p>
+        <p>IFC Center | October 3, 2025 | 8:00 PM</p>
+        <p>Angelika Film Center (SoHo) | October 10, 2025 | 7:45 PM</p>
       </section>
     </main>
 
