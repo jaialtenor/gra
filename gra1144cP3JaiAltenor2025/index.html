@@ -1,61 +1,347 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Beyond the Lights</title>
-  <link rel="stylesheet" href="./css/style.css" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Raleway+Dots&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --gold: gold;
+      --bg-dark: #000;
+      --card-dark: #111;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Montserrat", Arial, Helvetica, sans-serif;
+      line-height: 1.5;
+      text-align: center;
+      background-color: var(--bg-dark);
+      color: white;
+    }
+
+    #wrapper {
+      max-width: 1100px;
+      padding: 36px 24px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    header { padding: 8px 0 0; }
+    .logo {
+      display: block;
+      margin: 0 auto 24px;
+      max-width: 450px;
+    }
+
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 8px 0;
+      display: inline-flex;
+      gap: 80px;
+    }
+    nav a {
+      color: #d9d9d9;
+      text-decoration: none;
+      text-transform: uppercase;
+      font-weight: 700;
+      letter-spacing: 1px;
+      padding: 8px 4px;
+      transition: color .2s ease, text-shadow .2s ease;
+    }
+    nav a:hover {
+      color: var(--gold);
+      text-shadow: 0 0 10px rgba(255,215,0,.8), 0 0 18px rgba(255,215,0,.5);
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+    }
+
+    .banner {
+      width: 100vw;
+      margin-left: calc(50% - 50vw);
+      margin-top: 8px;
+      margin-bottom: 16px;
+    }
+    .video-container {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+    }
+    .video-container iframe {
+      position: absolute; inset: 0;
+      width: 100%; height: 100%;
+    }
+
+    .cards {
+      display: flex;
+      gap: 24px;
+      justify-content: center;
+      align-items: stretch;
+      margin: 16px 0 8px;
+      flex-wrap: nowrap;
+    }
+    .card {
+      background: var(--card-dark);
+      flex: 1 1 0;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid rgba(255,215,0,0.35);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.5);
+      text-align: left;
+      min-width: 0;
+    }
+    .card-inner {
+      background: #f4e3b1;
+      color: black;
+      padding: 24px;
+      min-height: 220px;
+      border-radius: 8px;
+      border: 1px solid rgba(255,215,0,0.4);
+      box-shadow: inset 0 2px 6px rgba(0,0,0,0.1);
+    }
+    .card .title-image {
+      width: 340px;
+      max-width: 80%;
+      margin: 18px auto 8px;
+    }
+
+    #story p::first-letter {
+      font-size: 3rem;
+      font-weight: bold;
+      color: gold;
+      float: left;
+      line-height: 1;
+      margin-right: 6px;
+    }
+
+    .card-inner ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    .card-inner ul li {
+      margin: 8px 0;
+      font-size: 1.05rem;
+    }
+    .card-inner ul li::before {
+      content: "★ ";
+      color: var(--gold);
+      font-size: 1rem;
+      margin-right: 6px;
+      transition: text-shadow .2s ease;
+    }
+    .card-inner ul li:hover::before {
+      text-shadow: 0 0 8px rgba(255,215,0,0.9), 0 0 14px rgba(255,215,0,0.6);
+    }
+
+    #tickets {
+      background: var(--card-dark);
+      border-radius: 14px;
+      border: 1px solid rgba(255,215,0,0.35);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.5);
+      padding: 20px 24px;
+      margin: 30px auto;
+      max-width: 900px;
+      text-align: center;
+    }
+    .section-title {
+      width: 380px;
+      max-width: 85%;
+      margin: 10px auto 12px;
+      display: block;
+    }
+    .tickets-note {
+      font-size: .9rem;
+      color: #ddd;
+      margin: 6px auto 16px;
+      max-width: 720px;
+      line-height: 1.4;
+    }
+
+    #showtime-nav {
+      background: var(--card-dark);
+      border-radius: 14px;
+      border: 1px solid rgba(255,215,0,0.35);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.5);
+      padding: 16px;
+      margin: 18px auto;
+      max-width: 600px;
+    }
+    #showtime-nav ul {
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 40px;
+    }
+
+    .city-title {
+      font-family: "Raleway Dots", cursive, "Montserrat", sans-serif;
+      color: white;
+      text-transform: uppercase;
+      font-size: 1.8rem;
+      margin: 26px 0 10px;
+      letter-spacing: 1px;
+      text-shadow: 0 0 8px rgba(255,255,255,.9), 0 0 14px rgba(255,255,255,.6);
+    }
+
+    .city-card {
+      background: var(--card-dark);
+      border-radius: 12px;
+      border: 1px solid rgba(255,215,0,0.3);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.5);
+      padding: 18px 20px;
+      margin: 0 auto 18px;
+      max-width: 900px;
+      text-align: left;
+    }
+
+    footer {
+      background: var(--gold);
+      color: #000;
+      text-align: left;
+      font-size: .85rem;
+      padding: 18px 20px;
+      width: 100%;
+    }
+
+    @media (max-width: 760px) {
+      .cards { flex-wrap: wrap; }
+      .card { width: 100%; }
+      nav ul { gap: 28px; }
+      #wrapper { padding: 24px 16px; }
+    }
+  </style>
 </head>
+
 <body>
-  <header class="site-header">
-    <img src="./images/beyond-the-lights-logo.png" alt="Beyond the Lights logo" class="logo" />
-    <nav class="main-nav">
-      <ul>
-        <li><a href="#story">The Story</a></li>
-        <li><a href="#cast">Cast &amp; Crew</a></li>
-        <li><a href="#now-showing">Now Showing</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <main>
-    <section id="story" class="section">
-      <h1>Beyond the Lights</h1>
-      <p>
-        Beyond the Lights is a heartfelt drama about fame, love, and identity. It follows rising star
-        Noni Jean, a young singer on the edge of superstardom, who struggles with the pressure to be
-        perfect. When she meets Kaz Nicol, a police officer with dreams of his own, she begins to discover
-        her true voice and what it means to live honestly. The film blends romance, music, and self-discovery,
-        showing how finding love can also mean finding yourself.
-      </p>
-      <img src="./images/the-story.png" alt="The Story section artwork" class="section-art" />
-    </section>
-
-    <section id="cast" class="section">
-      <h2>Cast &amp; Crew</h2>
-      <ul class="cast-list">
-        <li><strong>Gugu Mbatha-Raw</strong> — Noni Jean</li>
-        <li><strong>Nate Parker</strong> — Kaz Nicol</li>
-        <li><strong>Minnie Driver</strong> — Macy Jean</li>
-        <li><strong>Gina Prince-Bythewood</strong> — Writer &amp; Director</li>
-      </ul>
-      <img src="./images/cast-and-crew.png" alt="Cast and Crew artwork" class="section-art" />
-    </section>
-
-    <section id="now-showing" class="section">
-      <h2>Now Showing</h2>
-      <p>Seating is limited. Tickets are required for screening admission. All ticket holders were emailed a QR code to redeem a “Debut Week Gift Bag” upon entry.</p>
-
-      <nav class="city-nav">
-        <a href="#miami">Miami</a>
-        <a href="#houston">Houston</a>
-        <a href="#los-angeles">Los Angeles</a>
-        <a href="#washington">Washington</a>
-        <a href="#new-york">New York</a>
+  <div id="wrapper">
+    <header>
+      <img class="logo" src="Images/Beyond The Lights Logo.png" alt="Beyond the Lights Logo">
+      <nav>
+        <ul>
+          <li><a href="#story">The Story</a></li>
+          <li><a href="#cast">Cast &amp; Crew</a></li>
+          <li><a href="#tickets">Now Showing</a></li>
+        </ul>
       </nav>
+    </header>
+  </div>
 
-      <h3 id="miami">Miami Showtimes</h3>
-      <ul class="showtimes">
+  <div class="banner">
+    <div class="video-container">
+      <iframe
+        src="https://www.youtube.com/embed/d8hKxJjuqhY?si=h0jCHr_OJlyCQGvi&amp;start=2&autoplay=1&mute=1"
+        title="Beyond the Lights Trailer"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen>
+      </iframe>
+    </div>
+  </div>
+
+  <div id="#wrapper">
+    <main>
+      <div class="cards">
+        <section id="story" class="card">
+          <img class="title-image" src="Images/The Story.png" alt="The Story">
+          <div class="card-inner">
+            <p>
+              <em>Beyond the Lights</em> is a heartfelt drama about fame, love, and identity.
+              It follows rising star Noni Jean, a young singer on the edge of superstardom,
+              who struggles with the pressure to be perfect. When she meets Kaz Nicol,
+              a police officer with dreams of his own, she begins to discover her true voice
+              and what it means to live honestly. The film blends romance, music, and
+              self-discovery, showing how finding love can also mean finding yourself.
+            </p>
+          </div>
+        </section>
+
+        <section id="cast" class="card">
+          <img class="title-image" src="Images/Cast And Crew.png" alt="Cast and Crew">
+          <div class="card-inner">
+            <ul>
+              <li><strong>Gugu Mbatha-Raw</strong> - Noni Jean</li>
+              <li><strong>Nate Parker</strong> - Kaz Nicol</li>
+              <li><strong>Minnie Driver</strong> - Macy Jean</li>
+              <li><strong>Gina Prince-Bythewood</strong> - Writer &amp;Director</li>
+            </ul>
+          </div>
+        </section>
+      </div>
+
+      <section id="tickets">
+        <img class="section-title" src="Images/Now Showing.png" alt="Now Showing">
+        <p class="tickets-note">
+          Seating is limited. Tickets are required for screening admission.<br>
+          All ticket holders were emailed a QR code to redeem a "Debut Week Gift Bag" upon entry.
+        </p>
+      </section>
+
+      <section id="showtime-nav">
+        <nav>
+          <ul>
+            <li><a href="#miami">Miami</a></li>
+            <li><a href="#houston">Houston</a></li>
+            <li><a href="#losangeles">Los Angeles</a></li>
+            <li><a href="#washington">Washington</a></li>
+            <li><a href="#newyork">New York</a></li>
+          </ul>
+        </nav>
+      </section>
+
+      <h3 id="miami" class="city-title">Miami Showtimes</h3>
+      <div class="city-card">
+        <p>The Filmore Miami Beach | September 26, 2025 | 7:25 PM</p>
+        <p>Silverspot Cinema | October 3, 2025 | 8:00 PM</p>
+        <p>CMX Brickell City Centre | October 10, 2025 | 7:30 PM</p>
+      </div>
+
+      <h3 id="houston" class="city-title">Houston Showtimes</h3>
+      <div class="city-card">
+        <p>River Oaks Theatre | September 26, 2025 | 7:30 PM</p>
+        <p>Regal Edwards Greenway Grand Palace | October 3, 2025 | 8:00 PM</p>
+        <p>Alamo Drafthouse LaCenterra | October 10, 2025 | 7:45 PM</p>
+      </div>
+
+      <h3 id="losangeles" class="city-title">Los Angeles Showtimes</h3>
+      <div class="city-card">
+        <p>TCL Chinese Theatre | September 26, 2025 | 7:30 PM</p>
+        <p>New Beverly Cinema | October 3, 2025 | 8:00 PM</p>
+        <p>American Cinematheque at the Egyptian | October 10, 2025 | 7:45 PM</p>
+      </div>
+
+      <h3 id="washington" class="city-title">Washington Showtimes</h3>
+      <div class="city-card">
+        <p>Landmark E Street Cinema | September 26, 2025 | 7:30 PM</p>
+        <p>Alamo Drafthouse DC (Bryant Street NE) | October 3, 2025 | 8:00 PM</p>
+        <p>AMC Georgetown 14 | October 10, 2025 | 7:45 PM</p>
+      </div>
+
+      <h3 id="newyork" class="city-title">New York Showtimes</h3>
+      <div class="city-card">
+        <p>Film Forum | September 26, 2025 | 7:30 PM</p>
+        <p>IFC Center | October 3, 2025 | 8:00 PM</p>
+        <p>Angelika Film Center (SoHo) | October 10, 2025 | 7:45 PM</p>
+      </div>
+    </main>
+  </div>
+
+  <footer>
+    <p>© 2025, Janai A. This is a fictitious web page created solely for the purpose of education and training.
+    All products and people associated with this web page are also fictitious. Any resemblance to real brands,
+    products, or people is purely coincidental. Information provided about the product is also fictitious and
+    should not be construed to be representative of actual products on the market in a similar product category.</p>
+  </footer>
+</body>
+</html>
+
         <li>The Filmore Miami Beach | September 26, 2025 | 7:25 PM</li>
         <li>Silverspot Cinema | October 3, 2025 | 8:00 PM</li>
         <li>CMX Brickell City Centre | October 10, 2025 | 7:30 PM</li>
