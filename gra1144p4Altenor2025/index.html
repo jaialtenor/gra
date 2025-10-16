@@ -3,71 +3,200 @@
 <head>
 <meta charset="UTF-8">
 <title>Adrienne Arsht Center for the Performing Arts</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
 <style type="text/css">
 body {
     margin: 0;
+    font-family: "Montserrat", Arial, sans-serif;
+    background-color: #FFFFFF;
+    color: #111111;
 }
 wrapper {
     display: block;
-    margin: auto;
-    width: 1366px;
-    padding: 48px;
-}
-section {
-    height: 1300px;
+    margin: 0;
+    width: 100%;
 }
 header {
-    text-align: center;
     background-color: white;
-}
-header img {
-    width: 375px;
-    display: block;
-    margin: 20px auto 30px auto;
-}
-nav {
-    background-color: black;
-    width: 100%;
     text-align: center;
-    padding: 25px 0;
-    margin-bottom: 25px;
-}
-ul {
     padding: 0;
     margin: 0;
-    list-style: none;
-    display: inline-block;
 }
-ul a {
-    color: white;
+header a {
     text-decoration: none;
-    font-size: 18px;
-    font-weight: bold;
 }
-ul a li {
-    display: inline-block;
-    padding: 12px 30px;
-}
-li:hover {
-    background-color: #FF0004;
-}
-img, iframe {
+header img {
+    width: 520px;
     display: block;
-    width: 100%;
-    height: auto;
     margin: 0 auto;
+    transition: 0.3s ease;
+}
+header img:hover {
+    opacity: 0.9;
+}
+nav {
+    background-color: #111111;
+    width: 100%;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+nav ul li {
+    padding: 22px 70px;
+    font-size: 18px;
+    font-weight: 600;
+    color: white;
+    transition: background-color 0.3s ease;
+}
+nav ul li:hover {
+    background-color: #E63946;
+    cursor: pointer;
+}
+nav a {
+    text-decoration: none;
+    color: white;
+    display: block;
+}
+section {
+    width: 100%;
+    padding: 0 8% 70px 8%;
+    box-sizing: border-box;
+    margin: 0;
+}
+#home {
+    padding-top: 0;
+}
+.hero-video {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+.hero-video iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
 }
 h2 {
     text-align: center;
-    font-size: 28px;
-    margin-bottom: 20px;
+    font-size: 34px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 45px;
+    color: #111111;
+    border-bottom: 3px solid #C9A568;
+    display: inline-block;
+    padding-bottom: 12px;
+    background: linear-gradient(to top, #f5f5f5 40%, transparent 60%);
+    padding: 12px 30px;
+    border-radius: 6px;
+    text-align: center;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+p {
+    max-width: 850px;
+    margin: 0 auto 25px auto;
+    font-size: 17px;
+    line-height: 1.6;
+    text-align: center;
+}
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+    margin-top: 50px;
+}
+.card {
+    background-color: #F5F5F5;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 6px 15px rgba(230, 57, 70, 0.25);
+}
+.card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+.card-content {
+    padding: 20px;
+}
+.card-content h3 {
+    margin: 0 0 10px 0;
+    font-size: 20px;
+    color: #111111;
+    font-weight: 600;
+}
+.card-content p {
+    font-size: 15px;
+    color: #555;
+    text-align: left;
+}
+.location-info {
+    text-align: center;
+    margin-top: 40px;
+}
+.location-info h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+    color: #111111;
+    display: inline-block;
+    position: relative;
+}
+.location-info h3::after {
+    content: "";
+    display: block;
+    width: 80%;
+    height: 4px;
+    background-color: #C9A568;
+    margin: 8px auto 15px auto;
+    border-radius: 2px;
+}
+.location-info p {
+    margin-bottom: 5px;
+    color: #333;
+}
+.map-container {
+    width: 100%;
+    max-width: 900px;
+    margin: 50px auto;
+}
+.location-img {
+    display: block;
+    width: 100%;
+    max-width: 850px;
+    margin: 0 auto 30px auto;
+    border-radius: 8px;
+    object-fit: cover;
 }
 footer {
-    text-align: center;
-    padding: 30px;
-    background-color: black;
+    background-color: #111111;
     color: white;
-    margin-top: 30px;
+    text-align: center;
+    padding: 60px 25px;
+    font-size: 14px;
+    line-height: 1.7;
+    border-top: 2px solid #C9A568;
+}
+footer p {
+    max-width: 900px;
+    margin: 0 auto 10px auto;
 }
 </style>
 </head>
@@ -76,47 +205,89 @@ footer {
 <wrapper>
 
 <header>
-  <img src="images/adrienne-arsht-logo.png" alt="Adrienne Arsht Logo">
+  <a href="#home">
+    <img src="Images/adrienne-arsht-logo.png" alt="Adrienne Arsht Center Logo">
+  </a>
 </header>
 
 <section id="home">
   <nav>
     <ul>
       <a href="#home"><li>Home</li></a>
-      <a href="#media"><li>Media</li></a>
+      <a href="#media"><li>Media and Performances</li></a>
       <a href="#location"><li>Location</li></a>
     </ul>
   </nav>
 
-  <h2>Home</h2>
-
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/-TTyka51JDU?si=PmfazoyhxX4faObn" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-
+  <div class="hero-video">
+    <iframe src="https://www.youtube.com/embed/-TTyka51JDU?autoplay=1&mute=1&loop=1&playlist=-TTyka51JDU" title="Adrienne Arsht Center Exterior Video" allow="autoplay; fullscreen"></iframe>
+  </div>
 </section>
 
 <section id="media">
   <nav>
     <ul>
       <a href="#home"><li>Home</li></a>
-      <a href="#media"><li>Media</li></a>
+      <a href="#media"><li>Media and Performances</li></a>
       <a href="#location"><li>Location</li></a>
     </ul>
   </nav>
-  <h2>Media</h2>
-  <img src="images/cell-block-tango.jpg" alt="Performance image">
+
+  <h2>Media and Performances</h2>
+  <p>The Adrienne Arsht Center celebrates the best of theater, dance, and live performance, offering audiences unforgettable experiences that bring Miami’s creative spirit to life.</p>
+  <div class="grid">
+    <div class="card">
+      <img src="Images/cell-block-tango.jpg" alt="Chicago Performance">
+      <div class="card-content">
+        <h3>Chicago: The Musical</h3>
+        <p>A timeless Broadway hit full of glamour, rhythm, and unforgettable choreography that brings the roaring 1920s to the Arsht stage.</p>
+      </div>
+    </div>
+    <div class="card">
+      <img src="Images/theater-exterior.jpg" alt="Stage Performance">
+      <div class="card-content">
+        <h3>Miami City Ballet</h3>
+        <p>Celebrating artistry, elegance, and emotion, the Miami City Ballet continues to shine as one of the premier dance companies in the country.</p>
+      </div>
+    </div>
+    <div class="card">
+      <img src="Images/adrienne-arsht-logo.png" alt="Jazz Roots Concert">
+      <div class="card-content">
+        <h3>Jazz Roots Live</h3>
+        <p>An Arsht Center tradition — a night where music, storytelling, and culture meet under the lights of the Knight Concert Hall.</p>
+      </div>
+    </div>
+  </div>
 </section>
 
 <section id="location">
   <nav>
     <ul>
       <a href="#home"><li>Home</li></a>
-      <a href="#media"><li>Media</li></a>
+      <a href="#media"><li>Media and Performances</li></a>
       <a href="#location"><li>Location</li></a>
     </ul>
   </nav>
 
-  <h2>Location</h2>
-  <img src="images/theater-exterior.jpg" alt="Theater Exterior">
+  <h2>Visit the Arsht Center</h2>
+  <img src="Images/theater-exterior.jpg" alt="Theater Exterior" class="location-img">
+  <p>Located in downtown Miami, the Adrienne Arsht Center stands as one of the largest performing arts centers in the United States. With its stunning architecture, vibrant programming, and prime location along Biscayne Boulevard, the Arsht Center is the heart of Miami’s cultural scene.</p>
+
+  <div class="location-info">
+    <h3>Hours of Operation</h3>
+    <p>Monday - Friday: 10:00 AM – 6:00 PM</p>
+    <p>Saturday: 12:00 PM – 5:00 PM</p>
+    <p>Sunday: Closed</p>
+
+    <h3>Contact Information</h3>
+    <p>Phone: (305) 949-6722</p>
+    <p>Email: info@arshtcenter.org</p>
+    <p>Address: 1300 Biscayne Blvd, Miami, FL 33132</p>
+  </div>
+
+  <div class="map-container">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3585.4646800465534!2d-80.18902112372378!3d25.78882930802822!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88d9b68a2bb4d6e1%3A0x305a93a994c0b048!2sAdrienne%20Arsht%20Center!5e0!3m2!1sen!2sus!4v1728439828045!5m2!1sen!2sus" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+  </div>
 </section>
 
 <footer>
