@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shego Fashion | Janai Altenor 2025</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <header>
+    <nav class="navbar">
+      <ul class="nav-left">
+        <li><a href="#">Products</a></li>
+        <li><a href="#">Collections</a></li>
+      </ul>
+
+      <a href="#" class="logo">
+        <img src="images/shego-logo.png" alt="Logo" />
+      </a>
+
+      <ul class="nav-right">
+        <li><a href="#">About</a></li>
+        <li><a href="#">FAQ</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <img src="images/mainpage-banner.png" alt="Hero Banner">
+  </section>
+
+  <main class="product-section">
+    <div class="product-header">
+      <img src="images/phaith-favorites.png" alt="collection name">
+    </div>
+
+    <div class="product-content">
+      <div id="product" class="product-image">
+        <img id="redFront" style="visibility:visible;" src="images/trench-front-red.png" alt="Red Front">
+        <img id="redBack" style="visibility:hidden;" src="images/trench-back-red.png" alt="Red Back">
+
+        <img id="blackFront" style="visibility:hidden;" src="images/trench-front-black.png" alt="Black Front">
+        <img id="blackBack" style="visibility:hidden;" src="images/trench-back-black.png" alt="Black Back">
+
+        <img id="pinkFront" style="visibility:hidden;" src="images/trench-front-pink.png" alt="Pink Front">
+        <img id="pinkBack" style="visibility:hidden;" src="images/trench-back-pink.png" alt="Pink Back">
+      </div>
+
+      <div class="product-info">
+        <h2>"Finesse" | Vegan Fur Leather Coat</h2>
+        <p class="price">$110.00</p>
+        <p class="description">You'll be lookin' like a woman on a mission in this number.🥵  No one will be able to resist your dark aura.💋
+Note: the fur collar is removable! 
+Note: this is faux leather as we don't use any real animal products in our fits ✨</p>
+
+        <div class="size-selector">
+          <p class="size-label">Size:</p>
+          <div class="sizes">
+            <button>S</button>
+            <button>M</button>
+            <button>L</button>
+            <button>XL</button>
+            <button>2X</button>
+            <button>3X</button>
+          </div>
+        </div>
+		  
+<p class="color-swatches">Color:</p>
+        <div class="color-swatches">
+          <a href="#" onclick="showColor('red'); return false;">
+            <img src="images/swatch-red.png" alt="Red Color Swatch">
+          </a>
+          <a href="#" onclick="showColor('black'); return false;">
+            <img src="images/swatch-black.png" alt="Black Color Swatch">
+          </a>
+          <a href="#" onclick="showColor('pink'); return false;">
+            <img src="images/swatch-pink.png" alt="Pink Color Swatch">
+          </a>
+        </div>
+
+        <button class="buy-btn">Buy Now</button>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2025, Janai Altenor. This is a fictitious web page created solely for the purpose of education and training. All products and people associated with this web page are also fictitious. Any resemblance to real brands, products, or people is purely coincidental. Information provided about the product is also fictitious and should not be construed to be representative of actual products on the market in a similar product category.</p>
+  </footer>
+
+  <script>
+    const product = document.getElementById('product');
+    product.addEventListener('mouseover', () => {
+      const visibleFront = document.querySelector('#product img[style*="visible"][id$="Front"]');
+      const backId = visibleFront.id.replace('Front', 'Back');
+      visibleFront.style.visibility = 'hidden';
+      document.getElementById(backId).style.visibility = 'visible';
+    });
+
+    product.addEventListener('mouseout', () => {
+      const visibleBack = document.querySelector('#product img[style*="visible"][id$="Back"]');
+      const frontId = visibleBack.id.replace('Back', 'Front');
+      visibleBack.style.visibility = 'hidden';
+      document.getElementById(frontId).style.visibility = 'visible';
+    });
+
+    function showColor(color) {
+      const allImgs = document.querySelectorAll('#product img');
+      allImgs.forEach(img => img.style.visibility = 'hidden');
+      document.getElementById(color + 'Front').style.visibility = 'visible';
+    }
+
+    const sizeButtons = document.querySelectorAll('.sizes button');
+    sizeButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        sizeButtons.forEach(btn => btn.classList.remove('active'));
+        button.classList.add('active');
+      });
+    });
+  </script>
+
+</body>
+</html>
+
