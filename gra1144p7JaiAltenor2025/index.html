@@ -1,115 +1,292 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Wanderlust Travel Agency</title>
+<meta charset="UTF-8">
+<title>Wanderlust Travel Agency</title>
 
-    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            background-color: #e5e5e5;
-            font-family: 'Montserrat', sans-serif;
-        }
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
 
-        #wrapper {
-            width: 1366px;
-            margin: 0 auto;
-            background: #ffffff;
-            padding: 20px;
-        }
+<style>
 
-        header {
-            background-color: #4da6ff;
-            color: #fff;
-            padding: 30px;
-            text-align: center;
-            font-size: 32px;
-            font-weight: 700;
-        }
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(180deg, #a8d8ff 0%, #e7f6ff 40%, #ffe9cc 100%);
+    font-family: Montserrat, sans-serif;
+}
 
-        h2 {
-            margin-top: 40px;
-            font-size: 26px;
-            text-align: center;
-        }
+#wrapper {
+    width: 1366px;
+    margin: 0 auto;
+    background: #ffffff;
+    padding: 30px 50px;
+    box-sizing: border-box;
+    border-radius: 14px;
+}
 
-        #tabs {
-            margin-top: 30px;
-            background: #fff;
-        }
+.final-logo-wrap {
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 25px;
+}
 
-        #tabs ul li a {
-            font-size: 18px;
-        }
+.final-logo {
+    width: 420px;
+    max-width: 85%;
+    height: auto;
+}
 
-        footer {
-            padding: 30px;
-            margin-top: 40px;
-            background-color: #f2f2f2;
-            font-size: 13px;
-            line-height: 1.5;
-        }
-    </style>
+.hero {
+    margin-top: 20px;
+    width: 100%;
+    border-radius: 14px;
+}
 
-    <script>
-        $(function() {
-            $("#tabs").tabs();
-        });
-    </script>
+.section-title {
+    font-family: "Playfair Display", serif;
+    font-size: 34px;
+    font-weight: 700;
+    text-align: center;
+    margin-top: 40px;
+}
+
+.section-sub {
+    text-align: center;
+    font-size: 18px;
+    margin-top: 10px;
+    color: #555;
+}
+
+.info-grid {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 40px;
+}
+
+.info-card {
+    width: 350px;
+    height: 200px;
+    background: #f7f7f7;
+    border-radius: 12px;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    transition: 0.3s;
+    padding: 0;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.info-title {
+    font-family: "Playfair Display", serif;
+    font-size: 28px;
+    font-weight: 700;
+    z-index: 2;
+    position: relative;
+    color: #333;
+    transition: 0.3s;
+    padding: 20px;
+}
+
+.info-reveal {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 25px;
+    box-sizing: border-box;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: 0.3s;
+    color: white;
+    font-size: 16px;
+    font-family: Montserrat, sans-serif;
+    line-height: 1.6;
+    background: #5bb6ff;
+}
+
+.info-card:hover .info-title {
+    opacity: 0;
+    transform: translateY(-10px);
+}
+
+.info-card:hover .info-reveal {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+#tabs {
+    margin-top: 50px;
+}
+
+#tabs ul {
+    background: #ffffff;
+    border: none;
+    display: flex;
+    gap: 10px;
+}
+
+#tabs ul li a {
+    font-size: 18px;
+    padding: 12px 22px !important;
+    display: flex !important;
+    align-items: center;
+    gap: 12px;
+    font-weight: 600;
+    font-family: Montserrat, sans-serif;
+}
+
+.tab-icon {
+    width: 22px;
+    height: 22px;
+}
+
+.ui-tabs .ui-tabs-nav li.ui-tabs-active a {
+    background: #5bb6ff !important;
+    color: white !important;
+    border-radius: 6px;
+}
+
+.ui-tabs .ui-tabs-panel {
+    padding: 30px;
+    background: #f9f9f9;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    margin-top: 15px;
+}
+
+input, select, button {
+    padding: 13px;
+    font-size: 16px;
+    width: 280px;
+    margin-bottom: 18px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+button {
+    background: #5bb6ff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: 700;
+    transition: 0.2s;
+    border-radius: 8px;
+    padding: 12px 28px;
+}
+
+button:hover {
+    background: #0066cc;
+}
+
+.package-img {
+    width: 440px;
+    border-radius: 14px;
+    margin-top: 20px;
+}
+
+footer {
+    margin-top: 60px;
+    font-size: 13px;
+    color: #555;
+    line-height: 1.6;
+    padding-bottom: 20px;
+    text-align: center;
+}
+
+</style>
+
+<script>
+$(function() {
+    $("#tabs").tabs();
+});
+</script>
 
 </head>
 
 <body>
-
 <div id="wrapper">
 
-    <header>Wanderlust Travel Agency</header>
+    <div class="final-logo-wrap">
+        <img class="final-logo" src="wanderlust-logo.png" alt="Wanderlust Logo">
+    </div>
 
-    <h2>Plan your next getaway!</h2>
+    <img class="hero" src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1600" alt="Beach">
+
+    <div class="section-title">Where Luxury Meets Adventure</div>
+    <div class="section-sub">Curated escapes designed for travelers who crave beauty, comfort, and unforgettable moments.</div>
+
+    <div class="info-grid">
+        <div class="info-card">
+            <div class="info-title">Who We Are</div>
+            <div class="info-reveal">
+                We are a boutique travel agency specializing in elevated, curated journeys crafted with intention. Every trip is tailored to your taste, comfort, and wanderlust.
+            </div>
+        </div>
+
+        <div class="info-card">
+            <div class="info-title">Why Book With Us</div>
+            <div class="info-reveal">
+                Enjoy premium access, handpicked stays, and effortless planning. We take care of every detail so you can truly unwind and explore with ease.
+            </div>
+        </div>
+    </div>
 
     <div id="tabs">
         <ul>
-            <li><a href="#tabs-1">Flights</a></li>
-            <li><a href="#tabs-2">Hotels</a></li>
-            <li><a href="#tabs-3">Packages</a></li>
+            <li><a href="#tabs-1"><img class="tab-icon" src="https://cdn-icons-png.flaticon.com/512/3063/3063822.png">Flights</a></li>
+            <li><a href="#tabs-2"><img class="tab-icon" src="https://cdn-icons-png.flaticon.com/512/477/477108.png">Hotels</a></li>
+            <li><a href="#tabs-3"><img class="tab-icon" src="https://cdn-icons-png.flaticon.com/512/684/684908.png">Packages</a></li>
         </ul>
 
         <div id="tabs-1">
-            <p><strong>Search Flights:</strong></p>
-            <input type="text" placeholder="Departure City"><br><br>
-            <input type="text" placeholder="Arrival City"><br><br>
-            <input type="date"><br><br>
+            <p><strong>Book Your Flight</strong></p>
+            <input type="text" placeholder="Departure Airport"><br>
+            <input type="text" placeholder="Destination Airport"><br>
+            <label>Travel Date:</label><br>
+            <input type="date"><br>
             <button>Search Flights</button>
         </div>
 
         <div id="tabs-2">
-            <p><strong>Search Hotels:</strong></p>
-            <input type="text" placeholder="City or Destination"><br><br>
-            <input type="date"><br><br>
+            <p><strong>Find Your Hotel</strong></p>
+            <input type="text" placeholder="City or Location"><br>
+            <label>Check-In:</label><br>
+            <input type="date"><br>
+            <label>Check-Out:</label><br>
+            <input type="date"><br>
             <button>Search Hotels</button>
         </div>
 
         <div id="tabs-3">
-            <p><strong>Travel Packages:</strong></p>
+            <p><strong>Explore Travel Packages</strong></p>
             <select>
-                <option>Caribbean Escape</option>
+                <option>Caribbean Getaway</option>
                 <option>European Tour</option>
+                <option>Safari Adventure</option>
                 <option>Budget-Friendly Deals</option>
-            </select><br><br>
+            </select><br>
+
+            <img class="package-img" src="https://images.unsplash.com/photo-1508264165352-258a6b1b8d5e?q=80&w=1200">
+
+            <br><br>
             <button>View Packages</button>
         </div>
     </div>
 
     <footer>
-       © 2025, Jai Altenor. This is a fictitious web page created solely for the purpose of education and training. All products and people associated with this web page are also fictitious. Any resemblance to real brands, products, or people is purely coincidental. Information provided about the product is also fictitious and should not be construed to be representative of actual products on the market in a similar product category.<br><br>
+        © 2025, Janai Altenor. This is a fictitious web page created solely for education and training.
     </footer>
 
 </div>
-
 </body>
 </html>
