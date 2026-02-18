@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Proverbs</title>
+
+<style>
+body{
+  margin:0;
+  padding:0;
+  font-family: Georgia, "Times New Roman", serif;
+  color:#1c1c1c;
+  background: linear-gradient(135deg, #f6f1ea 0%, #efe6da 45%, #e7dccf 100%);
+}
+
+#wrapper{
+  width:80%;
+  margin:0 auto;
+  background:#ffffff;
+}
+
+header{
+  background:#141414;
+  color:#ffffff;
+  padding:22px 16px 18px;
+  text-align:center;
+}
+
+.logo{
+  display:block;
+  margin:0 auto;
+  width:260px;
+  max-width:90%;
+  height:auto;
+}
+
+nav{
+  margin-top:14px;
+}
+
+nav a{
+  display:inline-block;
+  padding:10px 12px;
+  color:#ffffff;
+  text-decoration:none;
+  font-size:13px;
+  letter-spacing:0.8px;
+  text-transform:uppercase;
+  opacity:0.9;
+}
+
+nav a:hover{
+  opacity:1;
+  text-decoration:underline;
+}
+
+main{
+  padding:16px;
+}
+
+.banner{
+  width:100%;
+  display:block;
+  height:300px;
+  object-fit:cover;
+}
+
+.heroText{
+  padding:18px 10px 8px;
+  text-align:center;
+}
+
+.heroText h2{
+  margin:0;
+  font-size:24px;
+}
+
+.heroText p{
+  margin:10px auto 0;
+  max-width:760px;
+  line-height:1.6;
+  font-size:15px;
+}
+
+.grid{
+  margin-top:18px;
+  display:flex;
+  flex-direction:column;
+  gap:16px;
+}
+
+.card{
+  border:1px solid #e6ddcf;
+  background:#ffffff;
+}
+
+.card img{
+  width:100%;
+  height:260px;
+  object-fit:cover;
+  display:block;
+}
+
+.cardBody{
+  padding:14px 14px 18px;
+}
+
+.cardBody h3{
+  margin:0;
+  font-size:18px;
+  letter-spacing:0.2px;
+}
+
+.cardBody p{
+  margin:8px 0 0;
+  font-size:14px;
+  line-height:1.6;
+}
+
+footer{
+  margin-top:22px;
+  padding:18px 16px;
+  background:#141414;
+  color:#ffffff;
+  font-size:12px;
+  line-height:1.6;
+}
+
+footer p{
+  margin:0;
+  opacity:0.9;
+}
+
+@media (min-width: 1000px){
+  main{
+    padding:22px;
+  }
+
+  .logo{
+    width:300px;
+  }
+
+  .heroText h2{
+    font-size:28px;
+  }
+
+  .grid{
+    flex-direction:row;
+    flex-wrap:wrap;
+  }
+
+  .card{
+    width:calc(50% - 8px);
+  }
+}
+
+
+@media (min-width: 1500px){
+  main{
+    padding:28px;
+  }
+
+  .card{
+    width:calc(33.333% - 10.666px);
+  }
+
+  .banner{
+    height:360px;
+  }
+
+  .card img{
+    height:280px;
+  }
+}
+
+
+@media (min-width: 2000px){
+  #wrapper{
+    width:80%;
+  }
+
+  .banner{
+    height:420px;
+  }
+
+  .card img{
+    height:320px;
+  }
+}
+</style>
+</head>
+
+<body>
+<div id="wrapper">
+
+  <header>
+    <img class="logo" src="logo-proverbs.png">
+
+    <nav>
+      <a href="#">home</a>
+      <a href="#">journal</a>
+      <a href="#">devotionals</a>
+      <a href="#">about</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <img class="banner" src="blackwomen-proverbs.jpg" alt="Banner image">
+
+    <section class="heroText">
+      <h2>Faith-led wellness for women of wisdom.</h2>
+      <p>The Proverbs is a soft, elevated space for faith-driven, ambitious Black women prioritizing mental clarity and spiritual grounding through reflection, scripture, and intentional routines. The Proverbs was created by a group of African-American female creative writers who believe being faithful, grounded, and authentic as well as telling your story is the key to success. </p>
+		  <p>"There's black women everywhere that can see themselves in a black woman anywhere. You are needed. Your story is needed. You fill a need in every space as long as you are woman, and ESPECIALLY if you are black." - Our Founder | Joanne Monet </p>
+    </section>
+
+    <section class="grid">
+
+      <article class="card">
+        <img src="boat-proverbs.jpg" alt="guided journals section">
+        <div class="cardBody">
+          <h3>Guided Journaling</h3>
+          <p>Weekly prompts and gentle structure to help you process life, make aligned decisions, and build a calmer mind.</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <img src="sunset-proverbs.jpg" alt="devotionals section">
+        <div class="cardBody">
+          <h3>Devotional Rhythms</h3>
+          <p>Scripture-based reflection for your real life—quiet time, prayer routines, and wisdom you can actually apply.</p>
+        </div>
+      </article>
+
+    </section>
+
+  </main>
+
+  <footer>
+    <p>2026, Jai Altenor</p>
+    <p>This is a fictitious web page created solely for the purpose of education and training. All products and people associated with this web page are also fictitious. Any resemblance to real brands, products, or people is purely coincidental. Information provided about the product is also fictitious and should not be construed to be representative of actual products on the market in a similar product category.</p>
+  </footer>
+
+</div>
+</body>
+</html>
