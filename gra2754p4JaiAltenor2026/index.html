@@ -1,0 +1,384 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Root &amp; Bloom</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+
+  <style>
+
+    :root {
+      --brown-deep:   #2e1a0e;
+      --brown-mid:    #6b3f2a;
+      --brown-warm:   #a0623a;
+      --brown-light:  #d4a882;
+      --blush:        #f2c4b0;
+      --blush-light:  #faeae3;
+      --cream:        #fdf7f2;
+      --text:         #1e1209;
+      --white:        #ffffff;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Lato', sans-serif;
+      color: var(--text);
+      background: var(--blush);
+    }
+
+    #wrapper {
+      width: 92%;
+      max-width: 1400px;
+      margin: 0 auto;
+      background: var(--white);
+    }
+
+    /* HEADER */
+    header {
+      background: var(--brown-deep);
+      padding: 24px 20px;
+      text-align: center;
+    }
+
+    .logo {
+      display: block;
+      margin: 0 auto;
+      width: 220px;
+      max-width: 80%;
+      height: auto;
+    }
+
+    .site-tagline {
+      color: var(--blush-light);
+      font-size: 11px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      margin-top: 8px;
+      font-weight: 300;
+    }
+
+    /* TOPNAV */
+    .topnav {
+      background: var(--brown-deep);
+      border-top: 1px solid var(--brown-mid);
+      padding: 0 16px;
+      position: relative;
+    }
+
+    .topnav a {
+      display: block;
+      color: var(--white);
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: 12px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      font-weight: 700;
+      opacity: 0.8;
+      transition: opacity 0.2s, background 0.2s;
+    }
+
+    .topnav a:hover { opacity: 1; background: rgba(255,255,255,0.08); }
+    .topnav a.active { opacity: 1; border-left: 3px solid var(--blush-light); }
+
+    .topnav a.icon {
+      position: absolute;
+      right: 0;
+      top: 0;
+      padding: 14px 20px;
+      font-size: 16px;
+    }
+
+    .topnav .fa-times { display: none; }
+    .topnav .fa-bars  { display: block; }
+
+    .topnav a:not(:first-child) { display: none; }
+
+    .topnav.responsive a:not(:first-child) { display: block; }
+    .topnav.responsive .fa-times { display: block; }
+    .topnav.responsive .fa-bars  { display: none; }
+
+    /* BANNER */
+    .banner {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* HERO TEXT */
+    .heroText {
+      padding: 30px 24px 24px;
+      text-align: center;
+      border-bottom: 1px solid var(--blush);
+    }
+
+    .heroText h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 22px;
+      color: var(--brown-deep);
+      margin-bottom: 12px;
+      font-style: italic;
+    }
+
+    .heroText p {
+      max-width: 680px;
+      margin: 0 auto;
+      line-height: 1.8;
+      font-size: 15px;
+      color: #555;
+      font-weight: 300;
+    }
+
+    /* MAIN & GRID */
+    main { padding: 24px 20px; }
+
+    .grid {
+      margin-top: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 22px;
+    }
+
+    /* CARDS */
+    .card {
+      border: 1px solid var(--blush);
+      background: var(--white);
+      overflow: hidden;
+    }
+
+    .card img {
+      width: 100%;
+      height: 240px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .cardBody { padding: 18px 20px 24px; }
+
+    .cardBody h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 19px;
+      color: var(--brown-deep);
+      margin-bottom: 10px;
+    }
+
+    .cardBody p {
+      font-size: 14px;
+      line-height: 1.8;
+      color: #555;
+      font-weight: 300;
+    }
+
+    .cardBody a {
+      display: inline-block;
+      margin-top: 14px;
+      font-size: 12px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--brown-warm);
+      text-decoration: none;
+      font-weight: 700;
+      border-bottom: 1px solid var(--blush);
+      padding-bottom: 2px;
+    }
+
+    .cardBody a:hover { color: var(--brown-deep); border-color: var(--brown-mid); }
+
+    /* FOOTER */
+    footer {
+      margin-top: 40px;
+      padding: 24px 20px;
+      background: var(--brown-deep);
+      color: var(--white);
+      font-size: 12px;
+      line-height: 1.8;
+    }
+
+    .footer-top {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--brown-mid);
+      margin-bottom: 16px;
+    }
+
+    .footer-brand {
+      font-family: 'Playfair Display', serif;
+      font-size: 20px;
+      color: var(--white);
+      letter-spacing: 2px;
+    }
+
+    .footer-tagline {
+      color: var(--blush-light);
+      font-size: 11px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      font-weight: 300;
+      margin-top: 4px;
+    }
+
+    .footer-links a {
+      display: block;
+      color: var(--white);
+      text-decoration: none;
+      opacity: 0.7;
+      font-size: 12px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .footer-links a:hover { opacity: 1; }
+
+    .footer-bottom p { opacity: 0.5; font-size: 11px; }
+    .footer-bottom p + p { margin-top: 6px; }
+
+    /* TABLET */
+    @media (min-width: 1000px) {
+
+      .topnav a:not(:first-child) {
+        display: inline-block;
+      }
+
+      .topnav a.icon { display: none; }
+      .topnav.responsive a.icon { display: none; }
+      .topnav.responsive a:not(:first-child) { display: inline-block; }
+
+      .topnav { text-align: left; padding: 0 22px; }
+      .topnav a { padding: 14px 14px; }
+      .topnav a.active { border-left: none; border-bottom: 2px solid var(--blush-light); }
+
+      .banner { height: 360px; }
+
+      .heroText h2 { font-size: 28px; }
+
+      .grid {
+        flex-direction: row;
+        flex-wrap: wrap;
+      }
+
+      .card { width: calc(50% - 11px); }
+
+      .footer-top {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+      }
+    }
+
+    /* LAPTOP */
+    @media (min-width: 1400px) {
+      .card { width: calc(33.333% - 15px); }
+      .banner { height: 420px; }
+      .card img { height: 260px; }
+      main { padding: 30px 28px; }
+    }
+
+  </style>
+</head>
+
+<body>
+<div id="wrapper">
+
+  <header>
+    <img class="logo" src="rootbloom-logo.png" alt="Root & Bloom logo">
+    <div class="site-tagline">Grow something beautiful, intentionally</div>
+  </header>
+
+  <nav class="topnav" id="myTopnav">
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+      <i class="fa fa-bars"></i><i class="fa fa-times"></i>
+    </a>
+    <a href="#" class="active">Home</a>
+    <a href="#">Journal</a>
+    <a href="#">Plant Guides</a>
+    <a href="#">Shop</a>
+    <a href="#">About</a>
+    <a href="#">Contact</a>
+  </nav>
+
+  <main>
+
+    <img class="banner" src="banner.jpeg" alt="Lush garden in bloom">
+
+    <section class="heroText">
+      <h2>A garden is a place to grow.</h2>
+      <p>Root &amp; Bloom is your guide to slow, mindful gardening — from first seeds to full harvest. Whether you have a backyard or a windowsill, there's always something worth cultivating.</p>
+    </section>
+
+    <section class="grid">
+
+      <article class="card">
+        <img src="classes.jpg" alt="Gardening classes">
+        <div class="cardBody">
+          <h3>Starting from Seed</h3>
+          <p>Everything you need to know about germination, seed trays, and giving your plants the strongest possible start before they ever touch the ground.</p>
+          <a href="#">Read More</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <img src="founder.jpeg" alt="Founder in the garden">
+        <div class="cardBody">
+          <h3>Seasonal Bloom Guide</h3>
+          <p>Know exactly what to plant and when. Our seasonal calendar takes the guesswork out of timing so your garden is always in color.</p>
+          <a href="#">Read More</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <img src="partner.jpeg" alt="Garden partner spotlight">
+        <div class="cardBody">
+          <h3>Kitchen Garden Basics</h3>
+          <p>Tomatoes, herbs, leafy greens — growing your own food is simpler than you think. Start small, eat well, and build confidence one harvest at a time.</p>
+          <a href="#">Read More</a>
+        </div>
+      </article>
+
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="footer-top">
+      <div>
+        <div class="footer-brand">Root &amp; Bloom</div>
+        <div class="footer-tagline">Grow something beautiful</div>
+      </div>
+      <div class="footer-links">
+        <a href="#">Home</a>
+        <a href="#">Journal</a>
+        <a href="#">Plant Guides</a>
+        <a href="#">Shop</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026, Jai Altenor</p>
+      <p>This is a fictitious web page created solely for the purpose of education and training. All products and people associated with this web page are also fictitious. Any resemblance to real brands, products, or people is purely coincidental. Information provided about the product is also fictitious and should not be construed to be representative of actual products on the market in a similar product category.</p>
+    </div>
+  </footer>
+
+</div>
+
+<script>
+function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+}
+</script>
+
+</body>
+</html>
